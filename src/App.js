@@ -48,10 +48,9 @@ export default class App extends Component {
         this.setState({
           d4rolls: [...this.state.d4rolls , roll + ',']
         })
-    } else {
-      var total = this.state.d4rolls.recude ((a , b) => a + b)
     }
     }
+    
     rollD6 = () => {
       var roll = Math.ceil(Math.random() * 6)
       if(this.state.d6rolls.length < 5){
