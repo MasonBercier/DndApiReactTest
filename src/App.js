@@ -44,10 +44,12 @@ export default class App extends Component {
     }
 
     totalRolls = () => {
+      if(this.state.d4rolls.length === 5) {
       this.setState({
-        totals: this.state.d4rolls.reduce((a,b)=>{return a+b})
+        totals: this.state.d4rolls.reduce((a,b)=>{return a+b}, 0)
       })
       console.log(this.state.totals)
+    }
     }
 
     // viewTotals = () => {
