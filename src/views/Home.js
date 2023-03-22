@@ -12,19 +12,15 @@ export default class Home extends Component {
     //mount
     //promise handling and api response
     addOne = () => {
-        console.log('button clicked')
-            this.setState({
-                age: this.state.age + 1
-        })
+        console.log('Fight!')
     }
 
     render() {
         return (
         <div>
-            <h1>This is my homepage</h1>
-            <h2>{this.state.name}</h2>
-            <h2>{this.state.age}</h2>
-            <button onClick={this.addOne}>Happy Bday</button>
+            <h2>{this.props.name}</h2>
+            <h2>{this.props.name}</h2>
+            <button onClick={this.addOne}>Fight!</button>
         </div>
         )
     }
