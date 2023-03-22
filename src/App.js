@@ -22,6 +22,7 @@ export default class App extends Component {
       d12rolls: [],
       d20rolls: [],
       strength: 15
+      
     }
   }
     addOne = () => {
@@ -30,19 +31,32 @@ export default class App extends Component {
         })
     }
 
+    reRoll = () => {
+      this.setState({
+        d4rolls : [],
+        d6rolls: [],
+        d8rolls: [],
+        d10rolls: [],
+        d12rolls: [],
+        d20rolls: [],
+      })
+    }
+
     rollD4 = () => {
       var roll = Math.ceil(Math.random() * 4)
       if(this.state.d4rolls.length < 5){
         this.setState({
-          d4rolls: [...this.state.d4rolls , roll]
+          d4rolls: [...this.state.d4rolls , roll + ',']
         })
+    } else {
+      var total = this.state.d4rolls.recude ((a , b) => a + b)
     }
     }
     rollD6 = () => {
       var roll = Math.ceil(Math.random() * 6)
       if(this.state.d6rolls.length < 5){
       this.setState({
-        d6rolls: [...this.state.d6rolls , roll]
+        d6rolls: [...this.state.d6rolls , roll + ',']
       })
     }
     }
@@ -50,7 +64,7 @@ export default class App extends Component {
       let roll = Math.ceil(Math.random() * 8)
       if(this.state.d8rolls.length < 5){
       this.setState({
-        d8rolls: [...this.state.d8rolls , roll]
+        d8rolls: [...this.state.d8rolls , roll + ',']
       })
       }
     }
@@ -58,7 +72,7 @@ export default class App extends Component {
       let roll = Math.ceil(Math.random() * 10)
       if(this.state.d10rolls.length < 5){
       this.setState({
-        d10rolls: [...this.state.d10rolls , roll]
+        d10rolls: [...this.state.d10rolls , roll + ',']
       })
     }
     }
@@ -66,7 +80,7 @@ export default class App extends Component {
       let roll = Math.ceil(Math.random() * 12)
       if(this.state.d12rolls.length < 5){
       this.setState({
-        d12rolls: [...this.state.d12rolls , roll]
+        d12rolls: [...this.state.d12rolls , roll + ',']
       })
     }
     }
@@ -74,7 +88,7 @@ export default class App extends Component {
       let roll = Math.ceil(Math.random() * 20)
       if(this.state.d20rolls.length < 5){
       this.setState({
-        d20rolls: [...this.state.d20rolls , roll]
+        d20rolls: [...this.state.d20rolls , roll + ',']
       })
     }
     }
@@ -97,6 +111,7 @@ export default class App extends Component {
               d10rolls = {this.state.d10rolls}
               d12rolls = {this.state.d12rolls}
               d20rolls = {this.state.d20rolls}
+              reRoll = {this.reRoll}
               rollD4 = {this.rollD4}
               rollD6 = {this.rollD6}
               rollD8 = {this.rollD8}

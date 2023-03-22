@@ -5,8 +5,11 @@ export default class RollDice extends Component {
   render() {
     return (
       <div>
+        <h4>You can roll each die five times (4 sided, 6 sided, etc.) and you can reroll as many times as you would like!</h4>
+        <button newclass="reroll" onClick={this.props.reRoll}>ReRoll Your Dice</button>
+          <p></p>
         <button newclass="d4" onClick={this.props.rollD4}>Roll a D4!</button>
-          <p>{this.props.d4rolls}</p>
+          <p>{this.props.d4rolls}</p> <p>{this.props.total}</p>
         <button newclass="d6" onClick={this.props.rollD6}>Roll a D6!</button>
           <p>{this.props.d6rolls}</p>
         <button newclass="d8" onClick={this.props.rollD8}>Roll a D8!</button>
