@@ -37,6 +37,11 @@ export default class Nav extends Component {
                   Roll Dice
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/character">
+                  Character
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

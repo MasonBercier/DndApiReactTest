@@ -25,63 +25,59 @@ export default class App extends Component {
     }
   }
     addOne = () => {
-        console.log('Fight!')
         this.setState({
-          strength: this.state.strength + 1
+          strength: this.state.strength + 0.002
         })
     }
 
     rollD4 = () => {
       var roll = Math.ceil(Math.random() * 4)
-      this.setState({
-        d4rolls: [...this.state.d4rolls , roll]
-      })
+      if(this.state.d4rolls.length < 5){
+        this.setState({
+          d4rolls: [...this.state.d4rolls , roll]
+        })
+    }
     }
     rollD6 = () => {
       var roll = Math.ceil(Math.random() * 6)
+      if(this.state.d6rolls.length < 5){
       this.setState({
         d6rolls: [...this.state.d6rolls , roll]
       })
-      console.log(this.state.d6rolls)
+    }
     }
     rollD8 = () => {
       let roll = Math.ceil(Math.random() * 8)
+      if(this.state.d8rolls.length < 5){
       this.setState({
         d8rolls: [...this.state.d8rolls , roll]
       })
-      console.log(this.state.d8rolls)
+      }
     }
     rollD10 = () => {
       let roll = Math.ceil(Math.random() * 10)
+      if(this.state.d10rolls.length < 5){
       this.setState({
         d10rolls: [...this.state.d10rolls , roll]
       })
-      console.log(this.state.d10rolls)
+    }
     }
     rollD12 = () => {
       let roll = Math.ceil(Math.random() * 12)
+      if(this.state.d12rolls.length < 5){
       this.setState({
         d12rolls: [...this.state.d12rolls , roll]
       })
-      console.log(this.state.d12rolls)
+    }
     }
     rollD20 = () => {
       let roll = Math.ceil(Math.random() * 20)
+      if(this.state.d20rolls.length < 5){
       this.setState({
         d20rolls: [...this.state.d20rolls , roll]
       })
-      console.log(this.state.d20rolls)
     }
-
-    
-    // componentDidMount = () => {
-    //   this.rollD4()
-    //   this.rollD6()
-    //   this.rollD8()
-    //   this.rollD10()
-    //   this.rollD12()
-    //   this.rollD20()
-    // }
+    }
 
   render() {
     return (
